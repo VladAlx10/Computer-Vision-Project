@@ -4,7 +4,7 @@ import subprocess
 import sys
 import tkinter as tk
 
-
+#Main
 def get_python_executable():
     """Get the correct Python executable path based on the current environment."""
     # If running in a virtual environment, use the virtual env's python

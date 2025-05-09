@@ -3,7 +3,7 @@ import numpy as np
 import tkinter as tk
 from tkinter import filedialog
 
-# --- Functia care rulează aplicația Color Picker după selectarea imaginii ---
+#Function that runs color picker app after selecting the image
 def run_color_detector(image_path):
     img = cv2.imread(image_path)
     img = cv2.resize(img, (800, 600))
@@ -40,7 +40,7 @@ def run_color_detector(image_path):
 
     cv2.destroyAllWindows()
 
-# --- Funcția apelată la apăsarea butonului ---
+#Function called when pressing button
 def import_image():
     image_path = filedialog.askopenfilename(
         title="Selectează o imagine",
@@ -50,13 +50,13 @@ def import_image():
         root.destroy()  # Închide fereastra de start
         run_color_detector(image_path)
 
-# --- Interfață inițială tkinter ---
+#Tkinter Interface
 root = tk.Tk()
 root.title("Color Detector")
 root.geometry("600x600")
 root.resizable(False, False)
 
-# Buton în centru
+#Center Button - Import Image
 import_btn = tk.Button(root, text="Import Image", font=("Arial", 18), command=import_image)
 import_btn.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
 
